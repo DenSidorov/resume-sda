@@ -216,13 +216,4 @@ button:focus {
     line-height: 20px;
     font-size: 20px;
   }
-
-  .main-slide ul {
-    /* padding: 0 10px 0 70px;                                                                                                                                            */
-  }
-
-  .main-slide li {
-    /* line-height: 10px;
-    padding-left: 0px; */
-  }
 }
