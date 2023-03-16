@@ -4,10 +4,11 @@ const upBtn = document.querySelector('.up-button');
 const sideBar = document.querySelector('.sidebar');
 const mainSlide = document.querySelector('.main-slide');
 const slidesCount = document.querySelectorAll('.slide').length;
-
+const height = container.clientHeight;
+const width = container.clientWidth;
 let activeSlideIndex = 0;
 
-sideBar.style.top = `-${(slidesCount-1)*100}vh`;
+sideBar.style.top = width > 500 ? `-${(slidesCount-1)*100}vh` : '';
 
 downBtn.addEventListener('click', () => {
     changeSlide('down');
@@ -36,10 +37,8 @@ function changeSlide(direction) {
         if (activeSlideIndex === slidesCount) {
             activeSlideIndex = 0
         };
-    };
+    };   
 
-    const height = container.clientHeight;
-
-    mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`;
-    sideBar.style.transform = `translateY(${activeSlideIndex * height}px)`;
+    mainSlide.style.transform = width > 500 ?  `translateY(-${activeSlideIndex * height}px)` : '';
+    sideBar.style.transform = width > 500 ?  `translateY(${activeSlideIndex * height}px)` : '';
 };
